@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 import { hashPassword } from "@/lib/password";
 
 const schema = z.object({
@@ -15,6 +15,8 @@ export async function POST(req: Request) {
   if (!parsed.success) {
     return NextResponse.json({ ok: false, error: "invalid_input" }, { status: 400 });
   }
+
+  const prisma = getPrisma();
 
   const exists = await prisma.user.findUnique({ where: { email: parsed.data.email } });
   if (exists) {
