@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
-    "@prisma/client": "^7.4.1",
+    "@prisma/client": "6.19.2",
     "bcryptjs": "^3.0.3",
     "bullmq": "^5.70.0",
     "ioredis": "^5.9.3",
@@ -28,7 +28,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.12",
-    "prisma": "^7.4.1",
+    "prisma": "6.19.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
