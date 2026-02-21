@@ -9,6 +9,7 @@ export default defineConfig({
     path: "prisma/migrations",
   },
   datasource: {
-    url: process.env["DATABASE_URL"],
+    // Render provides DATABASE_URL at runtime/build, but TypeScript sees it as possibly undefined.
+    url: process.env["DATABASE_URL"] ?? "",
   },
 });
