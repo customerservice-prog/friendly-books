@@ -11,7 +11,12 @@ export function getPrisma(): PrismaClient {
     throw new Error("Prisma client initialization is disabled during build.");
   }
 
-  const p = global.__prisma || new PrismaClient();
+  const datasourceUrl = process.env.DATABASE_URL;
+  if (!datasourceUrl) {
+    throw new Error("DATABASE_URL is required at runtime.");
+  }
+
+  const p = global.__prisma || new PrismaClient({ datasourceUrl });
   if (process.env.NODE_ENV !== "production") global.__prisma = p;
   return p;
 }
