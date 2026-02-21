@@ -12,11 +12,6 @@ services:
         fromDatabase:
           name: friendly-books-db
           property: connectionString
-      - key: REDIS_URL
-        fromService:
-          name: friendly-books-redis
-          type: redis
-          property: connectionString
       - key: NEXTAUTH_URL
         sync: false
       - key: NEXTAUTH_SECRET
@@ -30,40 +25,6 @@ services:
       - key: ENABLE_PASSWORD_LOGIN
         value: "1"
 
-  - type: worker
-    name: friendly-books-worker
-    runtime: node
-    plan: starter
-    buildCommand: "npm ci && npx prisma generate && npx prisma migrate deploy"
-    startCommand: "node worker/worker.js"
-    envVars:
-      - key: NODE_VERSION
-        value: "22"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: friendly-books-db
-          property: connectionString
-      - key: REDIS_URL
-        fromService:
-          name: friendly-books-redis
-          type: redis
-          property: connectionString
-      - key: NEXTAUTH_SECRET
-        fromService:
-          name: friendly-books-web
-          type: web
-          envVarKey: NEXTAUTH_SECRET
-      - key: ENCRYPTION_KEY
-        fromService:
-          name: friendly-books-web
-          type: web
-          envVarKey: ENCRYPTION_KEY
-
-  - type: redis
-    name: friendly-books-redis
-    plan: starter
-    ipAllowList: []
-
-
 databases:
   - name: friendly-books-db
+    plan: basic-256mb
