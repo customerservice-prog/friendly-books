@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BookOpen, ChartPie, ListChecks, Receipt, SlidersHorizontal } from "lucide-react";
 
 import type { ComponentType } from "react";
@@ -31,11 +32,20 @@ export function AppShell({
       <aside className="w-[270px] p-5 bg-[var(--card)] border-r border-[var(--border)] hidden md:flex md:flex-col">
         <div className="flex items-center gap-3 mb-6">
           <div
-            className="w-10 h-10 rounded-xl"
-            style={{ background: "var(--green)", boxShadow: "var(--shadow)" }}
-          />
+            className="rounded-xl overflow-hidden bg-white border border-[var(--border)]"
+            style={{ boxShadow: "var(--shadow)" }}
+          >
+            <Image
+              src="/friendly-books.jpg"
+              alt="Friendly Books"
+              width={72}
+              height={72}
+              priority
+              className="block w-[72px] h-[72px] object-cover"
+            />
+          </div>
           <div>
-            <div className="font-extrabold leading-4">Friendly Books</div>
+            <div className="font-extrabold leading-4 text-base">Friendly Books</div>
             <div className="text-xs text-[var(--muted)] mt-1">Business expenses & taxes</div>
           </div>
         </div>
