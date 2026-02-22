@@ -88,17 +88,13 @@ export default async function BreakdownPage({
 
             <div className="flex items-center gap-2">
               <div className="text-xs font-bold text-[var(--muted)]">Month</div>
-              <select
-                className="rounded-xl border border-[var(--border)] px-3 py-2 text-sm bg-white"
-                value={activeMonth}
-                onChange={() => {}}
+              <div
+                className="rounded-xl border border-[var(--border)] px-3 py-2 text-sm bg-white font-bold"
+                title="Month selection will be interactive soon"
               >
-                {(months.length ? months : [""]).map((m) => (
-                  <option key={m || "none"} value={m}>
-                    {m || "(no data)"}
-                  </option>
-                ))}
-              </select>
+                {activeMonth || "(no data)"}
+              </div>
+              {/* month picker coming soon */}
             </div>
           </div>
 
