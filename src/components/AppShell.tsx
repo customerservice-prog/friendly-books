@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, ChartPie, ListChecks, Receipt, SlidersHorizontal } from "lucide-react";
+import { BookOpen, ChartPie, ListChecks, Receipt, SlidersHorizontal, Table } from "lucide-react";
 
 import type { ComponentType } from "react";
 
@@ -56,6 +56,7 @@ export function AppShell({
           <NavItem href="/review" label="Review Inbox" icon={ListChecks} />
           <NavItem href="/rules" label="Rules" icon={SlidersHorizontal} />
           <NavItem href="/reports" label="Reports" icon={BookOpen} />
+          <NavItem href="/breakdown" label="Breakdown" icon={Table} />
         </nav>
 
         <div className="mt-auto pt-4">
