@@ -38,10 +38,10 @@ export function AppShell({
             <Image
               src="/friendly-books.jpg"
               alt="Friendly Books"
-              width={72}
-              height={72}
+              width={96}
+              height={96}
               priority
-              className="block w-[72px] h-[72px] object-cover"
+              className="block w-[96px] h-[96px] object-cover"
             />
           </div>
           <div>
