@@ -32,16 +32,16 @@ export function AppShell({
       <aside className="w-[270px] p-5 bg-[var(--card)] border-r border-[var(--border)] hidden md:flex md:flex-col">
         <div className="flex items-center gap-3 mb-6">
           <div
-            className="rounded-xl overflow-hidden bg-white border border-[var(--border)]"
+            className="rounded-2xl overflow-hidden bg-white border border-[var(--border)]"
             style={{ boxShadow: "var(--shadow)" }}
           >
             <Image
               src="/friendly-books.jpg"
               alt="Friendly Books"
-              width={96}
-              height={96}
+              width={192}
+              height={192}
               priority
-              className="block w-[96px] h-[96px] object-cover"
+              className="block w-[192px] h-[192px] object-contain bg-white"
             />
           </div>
           <div>
